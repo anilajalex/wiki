@@ -1,0 +1,28 @@
+<h1>Create new article</h1>
+
+<form method="POST" action="/new"> 
+	<input type="text" name="headline" placeholder="Headline">Headline</input>
+	<br>
+
+	<select name="category_id">
+		<% @all_categories.each do |category| %>
+			<option value="<%= category["id"] %>" selected><%= category["name"] %></option> 
+    <% end %>
+	</select>
+
+	<br>
+
+	<select name="author_id">
+		<% @all_authors.each do |author| %>
+			<option value="<%= author["auth_id"] %>" selected><%= author["full_name"] %></option>
+    <% end %>
+	</select>
+
+	<br>
+	<input type="text" name="summary" placeholder="Summary: cannot exceed 200 characters">Summary (optional)</input>
+	<br>
+	<input type="text" name="body" placeholder="Body">Body</input>
+	<br>
+	<input type="submit" value="submit">
+</form>
+

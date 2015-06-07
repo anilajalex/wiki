@@ -1,0 +1,271 @@
+/*HOMEPAGE*/
+
+/*.home {
+	background-image: url('/images/ocean.jpg');
+	background-size: cover;
+}*/
+
+footer {
+	position: fixed;
+	bottom: 0;
+	left: 0; 
+	width: 100%;
+	background-color: #FFFFFF; 
+	color: white;
+	line-height: 2px; 
+	text-align: center; 
+	font-family: sans-serif; 
+	opacity: 0.7;
+}
+
+/*.logo {
+	float: right;
+}*/
+
+.login {
+	background-color: #330000; 
+	opacity: 0.6;
+	position: absolute;
+	top: 200px;
+	left: 400px;
+	height: 150px;
+	width: 350px;
+	padding: 10px;
+	text-align: center; 
+	z-index: 2;
+}
+
+.login input[type=text] {
+	width: 250px;
+	height: 30px;
+	background: transparent;
+	border: 1px solid rgba(255,255,255,0.6);
+	border-radius: 2px;
+	color: #ffffff;
+	font-family: sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 4px;
+}
+
+.login input[type=password] {
+	width: 250px;
+	height: 30px;
+	background: transparent;
+	border: 1px solid rgba(255,255,255,0.6);
+	border-radius: 2px;
+	color: #fff;
+	font-family: sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 4px;
+	margin-top: 10px;
+}
+
+.login input[type=submit] {
+	width: 260px;
+	height: 35px;
+	background: #fff;
+	border: 1px solid #fff;
+	cursor: pointer;
+	border-radius: 2px;
+	color: #a18d6c;
+	font-family: 'Exo', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 6px;
+	margin-top: 10px;
+}
+
+.login input[type=submit]:hover {
+	opacity: 0.8;
+}
+
+.login input[type=submit]:active {
+	opacity: 0.6;
+}
+
+.login input[type=text]:focus {
+	outline: none;
+	border: 1px solid rgba(255,255,255,0.9);
+}
+
+.login input[type=password]:focus {
+	outline: none;
+	border: 1px solid rgba(255,255,255,0.9);
+}
+
+.login input[type=submit]:focus {
+	outline: none;
+}
+
+::-webkit-input-placeholder {
+   color: rgba(255,255,255,0.6);
+}
+
+::-moz-input-placeholder{
+   color: rgba(255,255,255,0.6);
+}
+
+#slideshow {
+    position:relative;
+    height:350px;
+    z-index:-1;
+}
+ 
+#slideshow IMG {
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:8;
+    opacity:0.0;
+}
+ 
+#slideshow IMG.active {
+    z-index:10;
+    opacity:1.0;
+}
+ 
+#slideshow IMG.last-active {
+    z-index:9;
+}
+ 
+#slideshow img {
+    /* Set rules to fill background */
+    min-height: 100%;
+    min-width: 1024px;
+ 
+    /* Set up proportionate scaling */
+    width: 100%;
+    height: auto;
+ 
+    /* Set up positioning */
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+ 
+@media screen and (max-width: 1024px){
+    img.bg {
+    left: 50%;
+    margin-left: -512px;
+	}
+}
+
+header {
+  position: absolute;
+  background-color: #FFFFFF;
+  color: black;
+  top: 0;
+  left: 0;
+  width: 100%;
+  line-height: 45px;
+  opacity: 0.8; 
+  text-align: center;
+}
+
+body {
+	background-image: url(/images/background2.jpg);
+	background-position: cover;  
+}
+
+/*ARTICLES*/
+.archive_container {
+	background-color: #D1D1E0; 
+	opacity: 0.7;
+	width: 60%; 
+	height: 100%;
+	margin-left: auto;
+  margin-right: auto;
+
+}
+
+a {
+	color: black;
+}
+
+h1 {
+	text-align: center; 
+}
+
+dd {
+	text-align: center; 
+}
+
+dt {
+	text-align: center; 
+}
+
+/*CATEGORIES*/
+
+.board {
+	width: 250px;
+  height: 250px;
+  margin: 0 auto;
+  list-style-type: none;
+}
+
+.square {
+	background-color: black; 
+	opacity: 0.5; 
+	width: 40%;
+  height: 40%;
+  border: 3px solid white;
+  float: left;
+  text-align: center;
+  font-size: medium;
+  font-family: helvetica;
+  color: white;
+  cursor: crosshair;
+}
+
+.category_form {
+	background-color: #330000; 
+	color: white;
+	opacity: 0.6;
+	float: right;
+	top: 200px;
+	left: 400px; 
+	height: 150px;
+	width: 150px;
+	padding: 10px;
+	text-align: center; 
+	z-index: 2;
+}
+
+.category_form input[type=submit] {
+	width: 75px;
+	height: 35px;
+	background: #fff;
+	border: 1px solid #fff;
+	cursor: pointer;
+	border-radius: 2px;
+	color: #a18d6c;
+	font-family: 'Exo', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 6px;
+	margin-top: 10px;
+}
+
+.categories {
+	background-image: url(images/background.jpg);
+	background-position: cover; 
+}
+
+/*AUTHORS*/
+
+.authors_container {
+	background-color: #D1D1E0; 
+	opacity: 0.7;
+	width: 60%; 
+	height: 100%;
+	margin-left: auto;
+  margin-right: auto;
+  text-align: center; 
+}
+
+ul {
+	list-style-type: none;
+}
+

@@ -1,0 +1,13 @@
+<form method="POST" action="/articles/<%= @art.first['art_id'] %>">
+	<input type="hidden" name="_method" value="PATCH">
+
+	<input type="text" name="headline" placeholder="Headline" value="<%= @art.first['headline'] %>">Headline</input><br>
+	
+	<input type="text" name="summary" placeholder="Summary: cannot exceed 200 characters" value="<%= @art.first['summary'] %>">Summary</input><br>
+	
+	<input type="text" name="body" placeholder="Body" value="<%= @art.first['body'] %>">Body</input><br>
+
+	<input type="submit" value="submit"></input>
+
+</form>
+

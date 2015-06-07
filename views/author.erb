@@ -1,0 +1,14 @@
+<h1>Author</h1>
+
+<dl>
+	<img src="<%= @author['img'] %>">
+	<dt>Name:</dt>
+	<dd><%= @author['full_name'] %><dd>
+
+	<dt>Email:</dt>
+	<dd><a href="mailto:<%=@author['email']%>?Subject=Hello" target="_top"><%= @author['email'] %></a><dd>
+
+	<dt>Articles:</dt>
+	<dd><a href="/articles/<%=@author['article_id']%>"><%= @author['headline'] %></a></dd>
+
+</dl>

@@ -1,0 +1,10 @@
+<%@category.each do |topic|%>
+
+	<h1><%= topic['name'] %></h1>
+
+	
+	<a href="/articles/ <%= topic['id'] %>"><div><%= topic['headline'] %></div></a>
+	<div><%= topic['summary'] %></div>
+
+<%end%>
+
