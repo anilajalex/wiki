@@ -1,13 +1,13 @@
 <div class="authors_container">
 
-<h1>Authors</h1>
+	<h1>Authors</h1>
 
-<ul class="authors">
-	<% @authors.each do |author| %>
-		<li><a href="/authors/<%= author['id'] %>"><%= author['fname'] %> <%= author['lname'] %></a>
-			&mdash; <a href="mailto:<%=author['email']%>?Subject=Hello" target="_top"><%= author['email'] %></li></a>
-	<% end %>
-</ul>
+	<ul class="authors">
+		<% @authors.each do |author| %>
+			<li><a href="/authors/<%= author['id'] %>"><%= author['fname'] %> <%= author['lname'] %></a>
+				&mdash; <a href="mailto:<%=author['email']%>?Subject=Hello" target="_top"><%= author['email'] %></li></a>
+		<% end %>
+	</ul>
 
 </div>
 

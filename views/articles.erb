@@ -1,15 +1,15 @@
 <div class="archive_container">
 
-<h1>Archive</h1>
+	<h1>Archive</h1>
 
-<% @articles.each do |article| %>
-<dl>
-	<dt><strong><a href="/articles/<%= article['id'] %>"><%= article['headline'] %></strong></a></dt>
-	<dd><i><%= article['summary'] %></i></dd>
-	
-<% end %> 
+	<% @articles.each do |article| %>
+	<dl>
+		<dt><strong><a href="/articles/<%= article['id'] %>"><%= article['headline'] %></strong></a></dt>
+		<dd><i><%= article['summary'] %></i></dd>
+		
+	<% end %> 
 
-<br> 
-<a class="new_art" href="/new">Add New</a>
+	<br> 
+	<a class="new_art" href="/new">Add New</a>
 
 </div>

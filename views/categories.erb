@@ -1,19 +1,19 @@
 <body class="categories">
 
-<h1>Categories</h1>
+	<h1>Categories</h1>
 
-<ul class="board">
-	<% @categories.each do |category| %>
-		<a href="/categories/<%= category['id'] %>"><li class="square"><%= category['name'] %></li></a>
-	<% end %> 
-</ul>
+	<ul class="board">
+		<% @categories.each do |category| %>
+			<a href="/categories/<%= category['id'] %>"><li class="square"><%= category['name'] %></li></a>
+		<% end %> 
+	</ul>
 
-</p>
-<form method="Post" action="/categories" class="category_form">
-	<p>NEW CATEGORY:</p>
-	<input type="text" name="name" placeholder="New category"></input>
-	<br>
-	<input type="submit" value="submit"></input>
-</form>
+	</p>
+	<form method="Post" action="/categories" class="category_form">
+		<p>NEW CATEGORY:</p>
+		<input type="text" name="name" placeholder="New category"></input>
+		<br>
+		<input type="submit" value="submit"></input>
+	</form>
 
 </body>
