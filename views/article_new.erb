@@ -1,28 +1,35 @@
-<h1>Create new article</h1>
 
-<form method="POST" action="/new"> 
-	<input type="text" name="headline" placeholder="Headline">Headline</input>
-	<br>
+	<form method="POST" action="/new" class="article_new"> 
+	<h1>Create a New Article</h1>
 
-	<select name="category_id">
-		<% @all_categories.each do |category| %>
-			<option value="<%= category["id"] %>" selected><%= category["name"] %></option> 
-    <% end %>
-	</select>
+	<form method="POST" action="/new" class="article_new"> 
+		<label>Headline:</label>
+		<input type="text" name="headline"></input>
+		<br>
+		<br>
+		<label>Categories:</label>
+		<select name="category_id">
+			<% @all_categories.each do |category| %>
+				<option value="<%= category["id"] %>" selected><%= category["name"] %></option> 
+	    <% end %>
+		</select>
 
-	<br>
+		<label>Authors:</label>
+		<select name="author_id">
+			<% @all_authors.each do |author| %>
+				<option value="<%= author["auth_id"] %>" selected><%= author["full_name"] %></option>
+	    <% end %>
+		</select>
 
-	<select name="author_id">
-		<% @all_authors.each do |author| %>
-			<option value="<%= author["auth_id"] %>" selected><%= author["full_name"] %></option>
-    <% end %>
-	</select>
-
-	<br>
-	<input type="text" name="summary" placeholder="Summary: cannot exceed 200 characters">Summary (optional)</input>
-	<br>
-	<input type="text" name="body" placeholder="Body">Body</input>
-	<br>
-	<input type="submit" value="submit">
-</form>
+		<br>
+		<br>
+		<label>Summary:</label>
+		<input type="text" name="summary" placeholder="Cannot exceed 200 characters" id="summary"></input>
+		<br>
+		<br>
+		<label>Body:</label>
+		<input type="text" name="body" id="body"></input>
+		<br>
+		<input type="submit" value="submit">
+	</form>
 

@@ -1,21 +1,26 @@
+<div class="individual_article">
+
 <% @article.each do |art| %>
-	<h1><%= art['headline'] %></h1>
+	<h1 class="post"><%= art['headline'] %></h1>
 
 	<article>
-		<a href="mailto:<%=art['email']%>?Subject=Hello" target="_top"><%= art['full_name'] %></a>
+		By <a href="mailto:<%=art['email']%>?Subject=Hello" target="_top"><%= art['full_name'] %></a>
 		<br>
-		Created: <%= art['created_at'] %> Updated: <%= art['updated'] %>
 		<br>
-		Body: <%= markdown(@article.first['body']) %>
+		Created: <%= art['created_at'] %> 
+		<br>
+		Updated: <%= art['updated'] %>
+		<br>
+		<%= markdown(@article.first['body']) %>
 		<br>
 		Category: <%= art['name'] %>
 		<br> 
 		<a href="/categories">Add new category</a> 
 	</article>
 
-<a href="/articles/<%= art['id'] %>/edit">edit</a>
+<a href="/articles/<%= art['id'] %>/edit">Edit Article</a>
 
 <% end %>
 
-
+</div>
 
