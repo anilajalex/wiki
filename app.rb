@@ -6,11 +6,13 @@ module App
 	class Server < Sinatra::Base 
 
 		configure :development do
-       $db = PG.connect dbname: "wiki", host: "localhost"
+      $db = PG.connect dbname: "wiki", host: "localhost"
 	    register Sinatra::Reloader
+      set :sessions, true
     end
 
     configure :production do
+      set :sessions, true
       require 'uri'
       uri = URI.parse ENV["DATABASE_URL"]
       $db = PG.connect dbname: uri.path[1..-1],
@@ -18,7 +20,6 @@ module App
                          port: uri.port,
                          user: uri.user,
                      password: uri.password
-      set :sessions, true
     end
 
     def current_user
