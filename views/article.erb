@@ -22,5 +22,10 @@
 
 <% end %>
 
+<form action ="/articles/<%= @delete_article['id'] %>" method="POST">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="Delete Article">
+</form>
+
 </div>
 

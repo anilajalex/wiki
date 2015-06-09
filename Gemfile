@@ -3,9 +3,11 @@ source "https://rubygems.org"
 
 # gem "rails"
 
-gem "sinatra"
-gem "sinatra-contrib"
-gem "pg"
-gem "pry"
-gem "redcarpet"
+gem 'sinatra'
+gem 'pg'
+gem 'redcarpet'
 
+group :development do
+	gem 'sinatra-contrib'
+	gem 'pry' 
+end 

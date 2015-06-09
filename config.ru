@@ -1,8 +1,7 @@
-require "pry"
-require "pg"
-require "sinatra"
-require "sinatra/contrib"
-require "redcarpet"
+require 'rubygems'
+require 'bundler'
+
+Bundler.require(:default, ENV['RACK_ENV'] || 'development')
 
 require_relative "app"
 

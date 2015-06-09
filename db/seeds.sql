@@ -1,3 +1,6 @@
+DROP DATABASE IF EXISTS wiki; 
+
+CREATE DATABASE wiki; 
 \c wiki
 
 
