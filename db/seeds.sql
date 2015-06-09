@@ -1,8 +1,4 @@
-DROP DATABASE IF EXISTS wiki; 
-
-CREATE DATABASE wiki; 
-\c wiki
-
+/c wiki
 
 INSERT INTO authors
 	(fname, lname, full_name, created_at, email, password, phone_number, img)
