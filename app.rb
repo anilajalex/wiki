@@ -5,23 +5,6 @@ enable :method_override
 module App
 	class Server < Sinatra::Base 
 
-		configure :development do
-      $db = PG.connect dbname: "wiki", host: "localhost"
-	    register Sinatra::Reloader
-      set :sessions, true
-    end
-
-    configure :production do
-      set :sessions, true
-      require 'uri'
-      uri = URI.parse ENV["DATABASE_URL"]
-      $db = PG.connect dbname: uri.path[1..-1],
-                         host: uri.host,
-                         port: uri.port,
-                         user: uri.user,
-                     password: uri.password
-    end
-
     def current_user
     	session[:user_id]
     end 
@@ -34,7 +17,6 @@ module App
       markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, :autolink => true, :hard_wrap => true, :space_after_headers => true )
       markdown.render(text)
     end 
-
 
    	#HOMEPAGE
 
@@ -97,13 +79,13 @@ module App
       redirect "/articles/#{article_id}"
    	end 
 
-   	delete('/articles/:id') do
-   		#delete an article
-   		id = params[:id]
-   		query = "DELETE FROM articles WHERE id = $1"
-			@delete_article = $db.exec_params(query, [id])
-   		redirect '/articles'
-   	end 
+   # 	delete('/articles/:id') do
+   # 		#delete an article
+   # 		id = params[:id]
+   # 		query = "DELETE FROM articles WHERE id = $1"
+			# @delete_article = $db.exec_params(query, [id])
+   # 		redirect '/articles'
+   # 	end 
 
    	#CATEGORIES 
 
@@ -128,14 +110,14 @@ module App
    		redirect "/categories/#{id.first["id"]}"
    	end 
 
-   	delete('/categories/:id') do
-      #delete a category
-      id = params[:id]
-      query = $db.exec_params("SELECT * FROM articles WHERE id = $1;", [id])
-      delete = "DELETE FROM categories WHERE id = $1;"
-      @delete_category = $db.exec_params(delete, [id]).first
-      redirect "/categories"
-    end 
+   	# delete('/categories/:id') do
+    #   #delete a category
+    #   id = params[:id]
+    #   query = $db.exec_params("SELECT * FROM articles WHERE id = $1;", [id])
+    #   delete = "DELETE FROM categories WHERE id = $1;"
+    #   @delete_category = $db.exec_params(delete, [id]).first
+    #   redirect "/categories"
+    # end 
 
    	#AUTHORS
 
